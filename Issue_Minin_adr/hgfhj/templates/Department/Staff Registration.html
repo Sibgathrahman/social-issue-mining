@@ -1,0 +1,103 @@
+{% extends 'Department_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/staff_reg">
+<div  align="center">
+  <table width="350" border="0">
+
+    <tr>
+      <td><div align="right">First Name : </div></td>
+	   <td><label>
+      <input type="text" name="textfield" required pattern="[A-Z a-z]{3,26}"/>
+      </label></td>
+	  </tr>
+	   <tr>
+	   <td><div align="right">Second Name : </div></td>
+       <td><label>
+      <input type="text" name="textfield2" required pattern="[A-Z a-z]{1,26}"/>
+      </label></td>
+    </tr>
+	<tr>
+      <td><div align="right">Department :</div></td>
+	   <td>
+          <label>
+          <select name="select" required>
+            <option>Select</option>
+            {% for i in val %}
+            <option value="{{i[1]}}" required>{{i[2]}}</option>
+            {% endfor %}
+          </select>
+          </label>
+      </td>
+	  </tr>
+	<tr>
+	  <td><div align="right">Qualification :</div></td>
+	   <td>
+         <label>
+        <select name="select2" required>
+		<option>Select</option>
+          <option>SSLC</option>
+          <option>PLUS TWO</option>
+          <option>UNDER GRADUATE</option>
+          <option>POST GRADUATE</option>
+        </select>
+         </label>
+       </td>
+    </tr>
+    <tr>
+	  <td><div align="right">Gender : </div></td>
+	  <td>
+	  <label>
+	    <input type="radio" name="RadioGroup1" value="Male" />
+	    Male</label>
+	  
+	  <label>
+	    <input type="radio" name="RadioGroup1" value="Female" />
+	    Female</label>
+	  
+	  </td>
+	  </tr>
+	<tr>
+      <td><div align="right">Date Of Birth : </div></td>
+      <td>
+        <label>
+        <input type="date" name="textfield4" required />
+      </label></td>
+    </tr>
+    <tr>
+	 <td><div align="right">Phone No : </div></td>
+	  <td><label>
+        <input type="number" name="textfield3" required pattern="[9876][0-9]{9}"/>
+      </label></td>
+	  </tr>
+	<tr>    
+	<td><div align="right">Email :</div></td>
+       <td><label>
+        <input type="text" name="textfield5" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+      </label></td>
+    </tr>
+	<tr>
+      <td><div align="right">Username :</div></td>
+	  <td><label>
+        <input type="text" name="textfield7" required/>
+      </label></td>
+	  </tr>
+	<tr>
+	   <td><div align="right">Password :</div></td>
+      <td><label>
+        <input type="password" name="textfield6" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td><label>
+        <div align="center"></div>
+        </label></td>
+      <td><label>
+        <div align="left">
+          <input type="submit" name="Submit" value="Register" class="btn btn-outline-primary"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  </div>
+</form>
+{% endblock %}

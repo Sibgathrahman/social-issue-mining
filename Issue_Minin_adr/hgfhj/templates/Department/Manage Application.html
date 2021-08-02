@@ -1,0 +1,43 @@
+{% extends 'Department_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="750" border="0" class="table table-striped">
+      <tr>
+        <th><div align="center">S.No.</div></th>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Application</th>
+		<th>Status</th>
+        <th>Name</th>
+        <th>&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td>{{i[4]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+
+        {% if i[5]=='pending': %}
+
+        <td></td>
+
+        {% elif i[5]=='Accepted': %}
+
+        <td><font color="blue">{{i[5]}}</font></td>
+
+        {% else: %}
+
+        <td><font color="red">{{i[5]}}</font></td>
+
+        {% endif %}
+
+        <td>{{i[6]}} {{i[7]}}</td>
+        <th><a href="{{url_for('accept_apps',id=i[0])}}"><font color="green"><i>Accept</i></font></a><a href="{{url_for('reject_apps',id=i[0])}}"><font color="red"><i>Reject</i></font></a></th>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+{% endblock %}

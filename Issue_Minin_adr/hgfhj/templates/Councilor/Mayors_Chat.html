@@ -1,0 +1,21 @@
+{% extends 'Councilor_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/Chat">
+  <div align="center">
+    <table width="350" border="1">
+      <tr>
+        <th><div align="center">S.No.</div></th>
+        <th><div align="center">Name</div></th>
+        <td></td>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td><div align="center">{{i[3]}} {{i[4]}}</div></td>
+        <th><p><div align="center"><a href="{{url_for('councilor_interaction',id=i[1])}}">Chat</a></div></p></th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

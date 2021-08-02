@@ -1,0 +1,49 @@
+{% extends 'Councilor_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="send_complaint">
+  <div align="center">
+    <table width="300" border="0">
+      <tr>
+        <td>Complaint :</td>
+        <td><label>
+          <textarea name="textarea" required ></textarea>
+        </label></td>
+      </tr>
+      <tr><td></td>
+        <td align="left"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Send" class="btn btn-outline-primary"/>
+          </div>
+        </label></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <table width="300" border="0" class="table table-striped">
+      <tr>
+        <th scope="col"><div align="center">S.No.</div></th>
+        <th scope="col">Date</th>
+        <th scope="col">Complaint</th>
+        <th scope="col">Reply</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+
+        {% if i[4]=='pending' %}
+
+        <th>&nbsp</th>
+
+        {% else %}
+
+      <td>&nbsp; {{i[4]}}</td>
+
+      {% endif %}
+
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

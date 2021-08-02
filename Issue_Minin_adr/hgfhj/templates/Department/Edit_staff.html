@@ -1,0 +1,80 @@
+{% extends 'Department_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/update_staff">
+<div  align="center">
+  <table width="350" border="0">
+    <tr>
+      <td><div align="right">Department : </div></td>
+      <td><label>
+        <select name="select" required>
+        {% for i in det %}
+          <option value="{{i[1]}}" {% if val[2]|string == i[1]|string %} selected {% endif %}>{{i[2]}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+       </tr>
+    <tr>
+      <td><div align="right">First Name : </div></td>
+      <td><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z]{3,26}" value="{{val[3]}}"/>
+      </label></td>
+       </tr>
+    <tr>
+      <td><div align="right">Second Name : </div></td>
+      <td><label>
+        <input type="text" name="textfield2" required pattern="[A-Z a-Z]{1,26}" value="{{val[4]}}"/>
+      </label></td>
+    </tr>
+	<tr>
+	  <td><div align="right">Gender : </div></td>
+	  <td>
+	    <label>
+	      <input type="radio" name="RadioGroup1" value="Male"  {% if(val[5] =="Male")%} checked {% endif %}/>
+	      Male</label>	    
+	    <label>
+	      <input type="radio" name="RadioGroup1" value="Female" {% if(val[5] =="Female")%} checked {% endif %}/>
+	      Female</label>	    
+	    </td>
+	  </tr>
+	<tr>
+       <td><div align="right">Qualification : </div></td>
+       <td><label>
+        <select name="select2" required>
+          <option>Select</option>
+          <option {%if val[7] =="SSLC" %} selected {% endif %}>SSLC</option>
+          <option {%if val[7] =="PLUS TWO" %} selected {% endif %}>PLUS TWO</option>
+          <option {%if val[7] =="UNDER GRADUATE" %} selected {% endif %}>UNDER GRADUATE</option>
+          <option {%if val[7] =="POST GRADUATE" %} selected {% endif %}>POST GRADUATE</option>
+        </select>
+      </label></td>
+    </tr>
+	<tr>
+      <td><div align="right">Date Of Birth : </div></td>
+      <td><label></label>
+        <label>
+        <input type="date" name="textfield3" required value="{{val[6]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right">Phone No : </div></td>
+      <td><label>
+        <input type="number" name="textfield4" required pattern="[9876][0-9]{9}" value="{{val[8]}}"/>
+      </label></td>
+        </tr>
+    <tr>
+      <td><div align="right">Email : </div></td>
+      <td><label>
+        <input type="text" name="textfield5" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{val[9]}}"/>
+      </label></td>
+    </tr>
+    <tr><td></td>
+      <td><label>
+        <div align="left">
+          <input type="submit" name="Submit" value="Update" class="btn btn-outline-primary"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  </div>
+</form>
+{% endblock %}

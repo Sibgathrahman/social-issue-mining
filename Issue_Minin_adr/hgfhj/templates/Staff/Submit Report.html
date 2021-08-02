@@ -1,0 +1,28 @@
+{% extends 'Staff_index.html' %}
+{% block body %}
+<form action="sub_report" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table width="400" border="0" >
+      <tr>
+        <td>Title :</td>
+        <td><label>
+          <input type="text" name="textfield" required />
+        </label></td>
+      </tr>
+      <tr>
+        <td>Report :</td>
+        <td><label>
+          <input type="file" name="file" required />
+        </label></td>
+      </tr>
+      <tr><td></td>
+        <td align="left"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Submit" class="btn btn-outline-primary"/>
+            </div>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+{% endblock %}

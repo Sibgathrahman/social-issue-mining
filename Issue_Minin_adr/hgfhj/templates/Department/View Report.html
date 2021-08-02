@@ -1,0 +1,25 @@
+{% extends 'Department_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="500" border="0" class="table table-striped">
+      <tr>
+        <th><div align="center">S.No.</div></th>
+        <th>Date</th>
+        <th>Staff Name </th>
+        <th>Report</th>
+        <th>Application</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td>{{i[3]}}</td>
+        <td>{{i[6]}} {{i[7]}}</td>
+        <th><a href="../static/Reports/{{i[4]}}"download>Download</a></th>
+        <td>{{i[8]}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+{% endblock %}

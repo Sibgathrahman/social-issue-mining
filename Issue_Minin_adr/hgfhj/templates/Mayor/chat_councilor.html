@@ -1,0 +1,28 @@
+{% extends 'Mayor_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/add_chat">
+  <div align="center">
+    <table width="568" height="131" border="1">
+      <tr>
+        <td align="center">{{name}}</td>
+      </tr>
+      {% for d in data %}
+      
+      <tr>
+        <td {% if d[0]|string== id %} align="left" {% else %} align="right" {% endif %}>{{d[1]}}</td>
+        {% endfor %}      </tr>
+      
+      
+      
+      <tr>
+        <td>
+          
+          <div align="center">
+            <textarea name="text" required ></textarea>
+            <input type="submit" name="button" id="button" value="Send" class="btn btn-outline-primary"/>
+          </div></td></tr>
+     
+    </table>
+  </div>
+</form>
+{% endblock %}

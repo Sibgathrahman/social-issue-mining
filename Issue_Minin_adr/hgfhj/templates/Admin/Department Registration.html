@@ -1,0 +1,43 @@
+{%  extends 'Admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/department_reg">
+  <div align="center">
+    <table width="350" border="0" >
+      <tr>
+        <td><div align="left">Department Name : </div></td>
+        <td><label>
+          <input type="text" name="textfield" required />
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="left">Description :</div></td>
+        <td><label>
+          <textarea name="textarea" required ></textarea>
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="left">Username :</div></td>
+        <td><label>
+          <input type="text" name="textfield2" required />
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="left">Password :</div></td>
+        <td><label>
+          <input type="password" name="textfield3" required />
+        </label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <div align="center"></div>
+        </label></td>
+        <td><label>
+          <div align="left">
+            <input type="submit" name="Submit" value="Register" class="btn btn-outline-primary"/>
+            </div>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

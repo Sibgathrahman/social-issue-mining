@@ -1,0 +1,21 @@
+{% extends 'Mayor_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/MayorInteraction">
+  <div align="center">
+    <table width="350" border="1">
+      <tr>
+        <th><div align="center">S.No.</div></th>
+        <th><div align="center">Councilor Name</div></th>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td><div align="center">{{i[2]}} {{i[3]}}</div></td>
+        <th><p><div align="center"><a href="{{url_for('chat_councilor',id=i[1])}}">Chat</a></div></p></th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{%  extends 'Admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="information">
+  <div align="center">
+    <table width="300" border="0">
+      <tr>
+        <td><div align="left">Corporation : </div></td>
+        <td><label>
+          <input type="text" name="textfield" required />
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="left">Description :</div></td>
+        <td><label>
+          <textarea name="textarea" required ></textarea>
+        </label></td>
+      </tr>
+      <tr><td></td>
+        <td align="left"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Add" class="btn btn-outline-primary"/>
+          </div>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

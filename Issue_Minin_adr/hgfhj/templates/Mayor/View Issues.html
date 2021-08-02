@@ -1,0 +1,21 @@
+{% extends 'Mayor_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="ViewIssues">
+  <div align="center">
+ <table width="900" border="1">
+      <tr>
+        <th scope="col" height="30"><div align="center">S.NO.</div></th>
+        <th scope="col" height="30" width="150"><div align="center">Councilor Name</div></th>
+        <th scope="col" height="30" width="900"><div align="center">Frequent Issue</div></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>&nbsp;<div align="center">{{i[0]}}</div></td>
+        <td width="150">&nbsp;{{i[3]}} {{i[4]}}</td>
+        <td width="900">&nbsp;{{i[2]}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+{% endblock %}

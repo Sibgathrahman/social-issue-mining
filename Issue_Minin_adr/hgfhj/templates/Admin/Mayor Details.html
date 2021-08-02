@@ -1,0 +1,50 @@
+{%  extends 'Admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="MayorRegistration">
+  <div align="center">
+    <table width="755" border="0" class="table table-striped">
+      <tr>
+        <th width="55"><div align="center"> S.No.</div></th>
+        <th width="71">Mayor Name </th>
+        <th width="89">Qualification</th>
+        <th width="75">Phone No </th>
+        <th width="145" >Email</th>
+        <th width="145" >Status</th>
+        <th width="145" >    </th>
+      </tr>
+
+      {% for i in val %}
+
+      <tr>
+        <td align="center">&nbsp;{{i[0]}} </td>
+        <td>{{i[3]}} {{i[4]}}</td>
+        <td>{{i[7]}} </td>
+        <td>{{i[8]}} </td>
+        <td>{{i[9]}} </td>
+
+        {% if i[10]=='Deactive': %}
+
+        <td><font color="red">{{i[10]}}</font></td>
+
+        {% else: %}
+
+        <td><font color="blue">Active</font></td>
+
+        {% endif %}
+
+        <th><a href="{{url_for('edit_mayor',id=i[0])}}"><font color="green"><i>Edit</i></font></a><a href="{{url_for('delete_mayor',id=i[1])}}"><font color="red"><i>Delete</i></font></a></th>
+      </tr>
+
+      {% endfor %}
+
+      <tr>
+        <td colspan="7" align="center"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Add" class="btn btn-outline-primary"/>
+          </div>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'Department_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="select_complaint">
+  <div align="center">
+    <table width="500" border="0" class="table table-striped">
+      <tr>
+        <th><div align="center">S.No.</div></th>
+        <th>Date</th>
+        <th>Complaint</th>
+        <th>Reply</th>
+        <th>Councilor Name</th>
+        <th></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        {% if i[4]=='pending': %}
+        <th></th>
+        {% else:%}
+        <td>&nbsp;{{i[4]}}</td>
+        {% endif %}
+        <td>{{i[5]}} {{i[6]}}</td>
+        <th><a href="{{url_for('reply',id=i[0])}}">Reply</a></th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

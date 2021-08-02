@@ -1,0 +1,23 @@
+{% extends 'Staff_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="400" border="0" class="table table-striped">
+      <tr>
+        <th scope="col"><div align="center">S.No.</div></th>
+        <th scope="col">Mayor Name</th>
+        <th scope="col">Policy Name</th>
+        <th scope="col">Policy</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td>{{i[4]}} {{i[5]}}</td>
+        <td>{{i[2]}}</td>
+        <th><a href="../static/Policy/{{i[3]}}"download>Download</a></th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

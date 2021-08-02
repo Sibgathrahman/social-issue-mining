@@ -1,0 +1,48 @@
+{%  extends 'Admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="Councilorregistration">
+  <div align="center">
+    <table width="650" border="0"  class="table table-striped">
+      <tr>
+        <th><div align="center">S.No.</div></th>
+        <th>Councilor Name</th>
+        <th>Ward</th>
+        <th>Phone No</th>
+        <th>Email</th>
+        <th>Place</th>
+        <th>Status</th>
+        <th>&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td> <div align="center">{{i[0]}}</div></td>
+        <td>{{i[2]}} {{i[3]}}</td>
+        <td>{{i[6]}}</td>
+        <td>{{i[7]}}</td>
+        <td>{{i[8]}}</td>
+        <td>{{i[9]}}</td>
+
+        {% if i[12]=='Deactive': %}
+
+        <td><font color="red">{{i[12]}}</font></td>
+
+        {% else: %}
+
+        <td><font color="blue">Active</font></td>
+
+        {% endif %}
+
+        <th><a href="{{url_for('Edit_councilor',id=i[0])}}"><font color="green"><i>Edit</i></font></a><a href="{{url_for('delete_councilor',id=i[1])}}"><font color="red"><i>Delete</i></font></a></th>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="8" align="center"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Add" class="btn btn-outline-primary"/>
+            </div>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+{% endblock %}

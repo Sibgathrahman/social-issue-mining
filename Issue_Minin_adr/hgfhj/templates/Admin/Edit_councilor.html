@@ -1,0 +1,88 @@
+{%  extends 'Admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/update_councilor">
+<div align="center">
+  <table width="350" border="0">
+    <tr>
+      <td><div align="left">First Name : </div></td>
+      <td><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z]{3,26}" value="{{val[2]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Second Name : </div></td>
+      <td><label>
+        <input type="text" name="textfield2" required pattern="[A-Z a-z]{1,26}" value="{{val[3]}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Gender : </div></td>
+      <td>
+        <label>
+
+          <input type="radio" name="RadioGroup1" value="Male" {% if(val[4]=="Male")%} checked {% endif %}/>
+          Male</label>
+        <label>
+          <input type="radio" name="RadioGroup1" value="Female" {% if(val[4]=="Female")%} checked {% endif %}/>
+          Female</label>
+      </td>
+    </tr>
+    <tr>
+      <td><div align="left">Date Of Birth :</div></td>
+      <td><label>
+        <div align="left">
+          <label>
+          <input type="date" name="textfield3" value="{{val[5]}}"/>
+          </label>
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Ward :</div></td>
+      <td><label>
+        <input type="number" name="textfield4" required pattern="[0-9]" value="{{val[6]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Phone No : </div></td>
+      <td><label>
+        <input type="number" name="textfield5" required pattern="[9876][0-9]{9}" value="{{val[7]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Email : </div></td>
+      <td><label>
+        <input type="text" name="textfield6" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{val[8]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Place :</div></td>
+      <td><label>
+        <input type="text" name="textfield7" required pattern="[A-z a-z 0-9]{3,30}" value="{{val[9]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Post :</div></td>
+      <td><label>
+        <input type="text" name="textfield8" required pattern="[A-z a-z 0-9]{3,30}" value="{{val[10]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="left">Pin :</div></td>
+      <td><label>
+        <input type="number" name="textfield9" required pattern="[0-9]{3,30}" value="{{val[11]}}"/>
+      </label></td>
+    </tr>
+
+    <tr>
+      <td><label></label></td>
+      <td><label>
+        <div align="left">
+          <input type="submit" name="Submit" value="Update" class="btn btn-outline-primary"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  </div>
+</form>
+{% endblock %}

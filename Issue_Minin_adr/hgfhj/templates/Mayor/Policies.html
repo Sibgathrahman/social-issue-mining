@@ -1,0 +1,30 @@
+{% extends 'Mayor_index.html' %}
+{% block body %}
+<form action="/policy" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table width="500" border="0">
+      <tr>
+        <td>Policy Name : </td>
+        <td><label>
+          <input type="text" name="textfield" required />
+        </label></td>
+    </tr>
+      <tr>
+        <td>Description :</td>
+        <td align="left"><label>
+          <div align="left">
+            <input type="file" name="file" required/>
+            </div>
+        </label></td>
+      </tr>
+      <tr><td></td>
+        <td align="left"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Upload"  class="btn btn-outline-primary"/>
+          </div>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

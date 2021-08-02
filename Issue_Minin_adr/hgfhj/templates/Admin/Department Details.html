@@ -1,0 +1,42 @@
+{%  extends 'Admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="DepartmentRegistration">
+  <div align="center">
+    <table width="400" border="0" class="table table-striped">
+      <tr>
+        <th><div align="center">S.No.</div></th>
+        <th>Department Name </th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>&nbsp; </th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[0]}}</div></td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+
+        {% if i[4]=='Deactive': %}
+
+        <td><font color="red">{{i[4]}}</font></td>
+
+        {% else: %}
+
+        <td><font color="blue">Active</font></td>
+
+        {% endif %}
+
+        <th><a href="{{url_for('Edit_department',id=i[0])}}"><font color="green"><i>Edit</i></font></a><a href="{{url_for('delete_department',id=i[1])}}"><font color="red"><i>Delete</i></font></a></th>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="5" align="center"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Add" class="btn btn-outline-primary"/>
+            </div>
+        </label></td>
+      </tr>
+      </table>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'Councilor_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="900" border="1">
+      <tr>
+        <th scope="col" height="30"><div align="center">S.NO.</div></th>
+        <th scope="col" height="30" width="900"><div align="center">Frequent Issue</div></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>&nbsp;<div align="center">{{i[0]}}</div></td>
+        <td width="900">&nbsp;&nbsp;{{i[2]}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+{% endblock %}
